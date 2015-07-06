@@ -14,3 +14,6 @@
 	- Requires a compatible V .ASI loader (Tested only on ScriptHookV)
 	- Does NOT modify your exe or game files!
 	
+	
+	Official Release Topic: http://gtaforums.com/topic/806177-skip-logosintro-bypass-legal-messages/
+	
