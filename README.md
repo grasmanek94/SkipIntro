@@ -7,3 +7,7 @@
 	License: MIT
 
 	grasmanek94 at gmail dot com
+
+	Notes: 
+	
+	- Tested *only* on GTA V STEAM Build 372 Online 1.27
