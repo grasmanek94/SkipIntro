@@ -26,12 +26,20 @@ void DisableLegalMessagesCompletely()
 	*(unsigned short*)(address) = 0x9090;
 }
 
+void DisableRockstarLogos()
+{
+	UINT64 logos = (UINT64)GetModuleHandleA(NULL) + 0x1762039;
+	memset((void*)logos, 0x00, 0x0E);
+}
+
 BOOL APIENTRY DllMain(HMODULE hInstance, DWORD reason, LPVOID lpReserved)
 {
 	switch (reason)
 	{
 	case DLL_PROCESS_ATTACH:
 		DisableLegalMessagesCompletely();
+		DisableRockstarLogos();
+		SetLegalMessageShowtime(1);
 		break;
 	case DLL_PROCESS_DETACH:
 		break;
