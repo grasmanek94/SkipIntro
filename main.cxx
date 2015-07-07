@@ -56,7 +56,7 @@ void DisableRockstarLogos()
 
 void DisableLegalMessagesCompletely()
 {	
-	UINT64 address = FindPattern("\x72\x1F\xE8\x12\x8D\xFB\x00\x8B\x0D\x34\x7F\xC3\x01\xFF\xC1\x48","xxxxxxxxxxxxxxxx");
+	UINT64 address = FindPattern("\x72\x1F\xE8\x12\x8D\xFB\x00\x8B\x0D\x34\x7F\xC3\x01\xFF\xC1\x48","xxx???xxx???xxxx");
 
 	unsigned long dwProtect;
 	unsigned long dwProtect2;

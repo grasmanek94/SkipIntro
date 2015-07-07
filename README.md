@@ -10,7 +10,10 @@
 
 	Notes: 
 	
-	- Tested *only* on GTA V STEAM Build 372 Online 1.27, but should work on all versions
+	- Tested *only* on :
+		GTA V STEAM Build 372 Online 1.27 ORIGINAL;
+		GTA V RETAIL 335.1 Online 1.24;
+		>>but should work on all versions<<
 	- Requires a compatible V .ASI loader (Tested only on ScriptHookV)
 	- Does NOT modify your exe or game files!
 	
