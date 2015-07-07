@@ -50,20 +50,25 @@ UINT64 FindPattern(char *pattern, char *mask)
 void DisableRockstarLogos()
 {
 	UINT64 logos = FindPattern("platform:/movies/rockstar_logos", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-
-	memset((void*)(logos + 0x11), 0x00, 0x0E);
+	if (logos != 0)
+	{
+		memset((void*)(logos + 0x11), 0x00, 0x0E);
+	}
 }
 
 void DisableLegalMessagesCompletely()
 {	
 	UINT64 address = FindPattern("\x72\x1F\xE8\x12\x8D\xFB\x00\x8B\x0D\x34\x7F\xC3\x01\xFF\xC1\x48","xxx???xxx???xxxx");
 
-	unsigned long dwProtect;
-	unsigned long dwProtect2;
+	if (address != 0)
+	{
+		unsigned long dwProtect;
+		unsigned long dwProtect2;
 
-	VirtualProtect((LPVOID)address, 2, PAGE_EXECUTE_READWRITE, &dwProtect);
-	*(unsigned short*)(address) = 0x9090;
-	VirtualProtect((LPVOID)address, 2, dwProtect, &dwProtect2);
+		VirtualProtect((LPVOID)address, 2, PAGE_EXECUTE_READWRITE, &dwProtect);
+		*(unsigned short*)(address) = 0x9090;
+		VirtualProtect((LPVOID)address, 2, dwProtect, &dwProtect2);
+	}
 }
 
 BOOL APIENTRY DllMain(HMODULE hInstance, DWORD reason, LPVOID lpReserved)
