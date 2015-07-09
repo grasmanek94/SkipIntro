@@ -20,7 +20,9 @@ bool memory_compare(const BYTE *data, const BYTE *pattern, const char *mask)
 	for (; *mask; ++mask, ++data, ++pattern)
 	{
 		if (*mask == 'x' && *data != *pattern)
+		{
 			return false;
+		}
 	}
 	return (*mask) == NULL;
 }
@@ -52,7 +54,8 @@ void DisableRockstarLogos()
 	UINT64 logos = FindPattern("platform:/movies/rockstar_logos", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 	if (logos != 0)
 	{
-		memset((void*)(logos + 0x11), 0x00, 0x0E);
+		//memset((void*)(logos + 0x11), 0x00, 0x0E);
+		memcpy((void*)logos,"./nonexistingfilenonexistingfil", 32);
 	}
 }
 
@@ -76,6 +79,9 @@ BOOL APIENTRY DllMain(HMODULE hInstance, DWORD reason, LPVOID lpReserved)
 	switch (reason)
 	{
 	case DLL_PROCESS_ATTACH:
+#ifdef DEBUG
+		while (!IsDebuggerPresent()) {}
+#endif
 		DisableRockstarLogos();
 		DisableLegalMessagesCompletely();
 		break;
