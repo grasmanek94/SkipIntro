@@ -14,7 +14,7 @@
 		GTA V STEAM Build 372 Online 1.27;
 		GTA V RETAIL 335.1 Online 1.24;
 		>>but should work on all versions<<
-	- Requires a compatible V .ASI loader (Tested only on ScriptHookV)
+	- Requires a compatible V .ASI loader (Tested only on dinput8.dll that is distributed with ScriptHookV)
 	- Does NOT modify your exe or game files!
 	
 	
