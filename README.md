@@ -4,8 +4,6 @@
 
 	Copyright (c) 2015 - Rafał 'grasmanek94/Gamer_Z' Grasman
 
-	License: MIT
-
 	grasmanek94 at gmail dot com
 
 	Notes: 
